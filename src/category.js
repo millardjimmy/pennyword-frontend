@@ -9,6 +9,10 @@ class Category{
 
         Category.all.push(this)
     }
+    attachToDom(){
+        this.categoryList.append(this.fullRender())
+        this.addEventListeners()
+    }
 
     fullRender(){
         this.element.innerHTML = `
@@ -20,10 +24,7 @@ class Category{
     flashcards(){
         return Flashcard.all.filter((flashcard)=> flashcard.category_id == this.id)
     }
-    attachToDom(){
-        this.categoryList.append(this.fullRender())
-        this.addEventListeners()
-    }
+
     addEventListeners(){
         this.element.addEventListener('click', this.displayItems)
 

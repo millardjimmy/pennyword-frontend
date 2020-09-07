@@ -5,7 +5,7 @@ class FlashcardsAdapter{
 
     //INDEX
     fetchFlashcards(){
-        fetch(this.baseUrl)
+        fetch("http://localhost:3000/flashcards")
             .then(response => response.json())
             .then(json => { 
                 json.data.forEach( card => { 
@@ -48,8 +48,6 @@ class FlashcardsAdapter{
             
         }  
         
-       
-        
         let configObj = {
             method: "POST",
             headers: {
@@ -63,8 +61,15 @@ class FlashcardsAdapter{
         .then(res => res.json()) 
         .then(json => {
             
-            let flashcard = new Flashcard(json.data.attributes)
-            flashcard.attachToDom()
+            let flashcard = new Flashcard(json.data.attributes) 
+            debugger
+            let category = new Category(flashcard.category_id)
+            if(document.getElementById(`category-${flashcard.category_id}`)){
+                flashcard.attachToDom()
+            }else{
+                flashcard.attachToDom()
+                category.attachToDom()
+            }
         })
         document.getElementById('new-card-form').reset()
 

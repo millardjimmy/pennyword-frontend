@@ -10,18 +10,45 @@ class Flashcard {
       this.element = document.createElement('div')
       this.element.id = `flashcard-${id}`
       this.flashcardList = document.getElementById('flashcard-list')
-        this.sortFunction = document.getElementById('sortButton')
+        // this.sortFunction = document.getElementById('sortButton')
+        
       this.id = id
 
 
       Flashcard.all.push(this)
     }
 
-    sortFunction(){
-    flashcardlist.sort(function(a,b) {
-        (a.attributes.title() > b.attributes.title() ? 1 : -1)
-        })
-    }
+    // sortFunction = () => {
+    //     // let cardArray = document.querySelectorAll("#flashcard-list div")
+
+
+    // console.log(Category.selectedCatagory)
+        
+
+    //     let arr = Flashcard.all.filter(card => card.category_id === Category.selectedCatagory)
+    //     console.log(arr)
+    //     // sort(function(a,b) {
+    //     //         let titleA = a.title.toLowerCase()
+    //     //         let titleB = b.title.toLowerCase()
+    //     //         if (titleA < titleB) {
+    //     //             return -1;
+    //     //         }
+    //     //         if (titleA > titleB){
+    //     //             return 1;
+    //     //         }
+    //     //         return 0;
+    //     //         })
+    //     //         Flashcard.all.forEach(
+    //     //             card => card.element.remove()
+    //     //         )
+    //     //  arr.forEach(card => card.attachToDom())
+    // //     (flashcard => flashcard.title)
+    // //     let larr = arr.map(title => title.toLowerCase())
+    // //     let sortedCards = larr.sort() 
+    // //   //debugger
+    // //     return sortedCards
+        
+    // }
 
 
     attachToDom(){  
@@ -33,7 +60,7 @@ class Flashcard {
     fullRender(){
         this.element.innerHTML = `
         <li>
-        <span class="image"> <img src="${this.image}" width="100" height="100"> </span>
+        <span id="image-${this.id}" class="image"> <img src="${this.image}" width="100" height="100"> </span>
         <span hidden="true" class="title"> ${this.title} </span>
         </li>
         <button class="delete" data-id="${this.id}">Delete</button>
@@ -45,7 +72,7 @@ class Flashcard {
     addEventListeners(){
         this.element.addEventListener('click', this.handleListClick)
         this.element.addEventListener('click', this.handleImageClick)
-        this.element.addEventListener('click', this.sortFunction)
+        // this.sortButton.addEventListener('click', this.sortFunction)
     }
 
     

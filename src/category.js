@@ -1,5 +1,6 @@
 class Category{
     static all = []
+    static selectedCatagory = ""
     constructor({id, title}) {
         this.id = id
         this.title = title 
@@ -36,7 +37,7 @@ class Category{
         this.flashcards().forEach((d)=>{
             d.attachToDom()
         })
-
+        Category.selectedCatagory = this.id
     }
 }
 

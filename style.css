@@ -1,59 +1,73 @@
-.splash {
-    background: rgb(63,94,251);
-    background: linear-gradient(45deg, rgb(38, 0, 255) 0%, rgb(2, 2, 2) 100%);
-  }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div.column {
+  text-align: center;
+}
+form {
+  text-align: center;
+}
+
+header {
+  background-color: rgba(224, 175, 255, 0.838);
+  margin: 0 auto;
+  height: 50px;
+  text-align: center;
   
-  .navbar-brand {
-    color: #fff;
-  }
-  
-  .navbar-brand img {
-    display: inline-block;
-    margin: 0 10px;
-    width: 50px;
-  }
-  
-  .brand-text {
-    font-family: 'helvetica', cursive;
-    font-size: 2.5rem !important;
-  }
-  
-  .form-label-text {
-    font-family: 'helvetica', cursive;
-    font-size: 1.5rem !important;
-  }
-  
-  .header-text {
-    font-family: 'helvetica', cursive;
-    font-size: 3.5rem !important;
-  }
-  
-  body {
-    background: rgb(63,94,251);
-    background: linear-gradient(90deg, rgb(255, 255, 255) 5%, rgb(0, 0, 0) 95%);
-  }
-  
-  .gameboard {
-    padding: 40px;
-    margin: 20px;
-    background: rgb(51, 36, 255);
-    min-height: 80vh;
-  }
-  
-  .object-fit-img {
-    height: 10rem;
-    object-fit: cover;
-  }
-  
-  .flashcard-style {
-    width: 10rem;
-  }
-  
-  .flashcard-modal-img {
-    height: 30rem;
-    object-fit: cover;
-  }
-  
-  html {
-    min-height: 100%;
-  }
+}
+li {
+  padding: 3px
+}
+button {
+  color: black;
+  padding: 1px 20px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #24124d;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;   
+}
+.button:hover {
+  background-color: #442d4d;
+  color: white;
+}
+
+header h2 {
+  padding: 10px;
+  margin: 0;
+}
+
+#main-title {
+  text-align: center;
+  color: #27241c;
+  font-size: 2.5em;
+  text-shadow: 3px 2px #afa484;
+}
+
+
+
+
+li {
+  font-size: 1.05em;
+  list-style: none;
+  padding-right: 20px;
+}
+
+.columnleft {
+  float: left;
+  width: 50%;
+}
+
+.columnright {
+  float: right;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

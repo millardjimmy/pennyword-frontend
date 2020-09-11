@@ -62,11 +62,12 @@ class FlashcardsAdapter{
         .then(json => {
             
             let flashcard = new Flashcard(json.data.attributes) 
-            debugger
-            let category = new Category(flashcard.category_id)
+            // debugger
+            // let category = new Category(flashcard.category)
             if(document.getElementById(`category-${flashcard.category_id}`)){
                 flashcard.attachToDom()
             }else{
+                let category = new Category(flashcard.category)
                 flashcard.attachToDom()
                 category.attachToDom()
             }
@@ -80,7 +81,8 @@ class FlashcardsAdapter{
         //         flashcard.attachToDom()
         //         }
         //     })
+        }
         
-    }
+    
 
 }

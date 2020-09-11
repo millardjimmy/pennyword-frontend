@@ -3,56 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penny</title>
-    <link rel="stylesheet" href="style.css">
-    <!--<script src="src/index.js" ></script> -->
+    <title>PennyBell</title>
+    <link rel="stylesheet" href="style.css">  
 </head>
+
 <body>
+
   <header>
     <h2> PennyBell!</h2>
+    <input type="button" id="sortButton" value="sort">
+      
   </header>
+
   <div class="row">
-    <div class="column">
-        <h2>Categories:</h2>
+    <div class="columnleft">
+      <h2>Categories:</h2>
         <ul id="category-list">
         </ul>
+
+      <h3> Add CARD: </h3>
+        <div id="new-form-container">
+          <form id="new-card-form">
+            <label for="new-card-title" >Title</label><br>
+              <input type="text" name="new-card-title" id="new-card-title" class=" form-control form-control-lg" value="">
+              <br><label for="new-card-description" >Description</label><br>
+              <input type="text" name="new-card-description" id="new-card-description" class="form-control form-control-lg" value="">
+              <br><label for="new-card-category" >Category</label><br>
+              <input type="text" name="category" id="new-card-category" class="form-control form-control-lg" > 
+              <br><label for="new-card-image" >Image</label><br>
+              <input type="text" name="new-card-image" id="new-card-image" class="form-control form-control-lg" aria-describedby="imageHelpBlock" placeholder="http://www.something.com/image" value="">
+             <small id="imageHelpBlock" class="form-text text-muted">
+              <br>Please use an image hosting service, such as imgur.com.</small><br> 
+            <input type="submit" value="Create">            
+          </form>
+        </div>
+    </div>
+    <div class="columnright">
+      <ul id="flashcard-list">
+      </ul>
     </div>
   </div>
-  <ul id="flashcard-list">
-  </ul>
-  <hr>
-  <h3> Add CARD: </h3>
-  <div id="new-form-container">
-    <form id="new-card-form">
-                    <div class="form-group row">
-                      <label for="new-card-title" class="form-label-text col-sm-3 col-form-label">Title</label>
-                      <div class="col">
-                        <input type="text" name="new-card-title" id="new-card-title" class=" form-control form-control-lg" value="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="new-card-description" class="form-label-text col-sm-3 col-form-label">Description</label>
-                      <div class="col">
-                        <input type="text" name="new-card-description" id="new-card-description" class="form-control form-control-lg" value="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="new-card-category" class="form-label-text col-sm-3 col-form-label">Category</label><br>
-                      <input type="text" name="category" id="new-card-category" class="form-control form-control-lg" value="">
-                    </div>
-                    <div class="form-group row">
-                      <label for="new-card-image" class="form-label-text col-sm-3 col-form-label">Image</label>
-                      <div class="col">
-                        <input type="text" name="new-card-image" id="new-card-image" class="form-control form-control-lg" aria-describedby="imageHelpBlock" placeholder="http://www.something.com/image" value="">
-                        <small id="imageHelpBlock" class="form-text text-muted">
-                          <br>Please use an image hosting service, such as imgur.com. 
-                        </small>
-                      </div>
-                    </div>
-                    <input type="submit" value="Create">
-                  
-    </form>
-  </div>
+
+  <!-- <div class="columnright">
+    <ul id="flashcard-list">
+    </ul>
+  </div> -->
+
+ 
 
   
     <script src="src/flashcard.js" type="text/javascript"></script>

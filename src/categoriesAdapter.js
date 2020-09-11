@@ -14,7 +14,8 @@ class CategoriesAdapter{
     }
     
     sanAndInitCategory(response){
-        let category = new Category({id: response.id, name: response.attributes.name}) 
+    
+        let category = new Category({id: response.id, title: response.attributes.title}) 
         category.attachToDom()
     }
 }

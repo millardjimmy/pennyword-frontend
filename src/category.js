@@ -1,8 +1,8 @@
 class Category{
     static all = []
-    constructor({id, name}) {
+    constructor({id, title}) {
         this.id = id
-        this.name = name 
+        this.title = title 
         this.element = document.createElement("li")
         this.element.id = `category-${id}`
         this.categoryList = document.getElementById('category-list')
@@ -14,9 +14,10 @@ class Category{
         this.addEventListeners()
     }
 
-    fullRender(){
+    fullRender = () => {
+        
         this.element.innerHTML = `
-            <h4> ${this.name}<h4>
+            <b> ${this.title}<b>
         `
         return this.element
 
@@ -26,11 +27,12 @@ class Category{
     }
 
     addEventListeners(){
-        this.element.addEventListener('click', this.displayItems)
+        this.element.addEventListener('click', this.displayCards)
 
     }
-    displayItems = () => {
-        document.getElementById('flashcards-list').innerHTML =``
+    displayCards = () => {
+        //debugger
+        document.getElementById('flashcard-list').innerHTML = ``
         this.flashcards().forEach((d)=>{
             d.attachToDom()
         })
